@@ -14,12 +14,12 @@ public class BooleanMapTest {
 
     @Before
     public void setUp() throws Exception {
-         test = new BooleanMap();
+        test = new BooleanMap();
     }
 
     @After
     public void tearDown() throws Exception {
-       test = null;
+        test = null;
     }
 
     BooleanMap test;

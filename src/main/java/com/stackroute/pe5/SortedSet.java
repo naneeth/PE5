@@ -2,19 +2,18 @@ package com.stackroute.pe5;
 
 import java.util.*;
 
-
+/*
+ * Write a program to implement set interface which sorts the given randomly ordered names in
+ * ascending order. Convert the sorted set in to an array list
+ */
 public class SortedSet {
-    public static void main(String[] args) {
-        List<String> nan = new ArrayList<>(Arrays.asList("Alice","Bluto","Eugene","Harry Olive"));
-        System.out.println(sortedSet(nan));
-    }
-    public static List<String> sortedSet(List<String> list){
-        Set<String> st = new TreeSet<>();
+    public List<String> sortedSet(List<String> list){
+        Set<String> set = new TreeSet<>();
         for(String item:list){
-            st.add(item);
+            set.add(item);
         }
-        List<String> nan = new ArrayList<>();
-               nan.addAll(st);
-     return nan;
+        List<String> outputList = new ArrayList<>();
+        outputList.addAll(set);
+        return outputList;
     }
 }

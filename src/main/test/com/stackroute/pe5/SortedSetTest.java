@@ -16,7 +16,7 @@ public class SortedSetTest {
 
     @Before
     public void setUp() throws Exception {
-         test = new SortedSet();
+        test = new SortedSet();
 
     }
 

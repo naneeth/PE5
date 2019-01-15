@@ -4,36 +4,31 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
+/*
+ * Write a method that accepts a Map object having two key-value pairs with the keys val1 and val2.
+ * Modify and return the given map as follows:
+ * a. If the key `val1` has a value, set the key `val2` to have that value, and
+ * b. Set the key `val1` to have the value `" "` (empty string ).
+ */
+
 public class ReplaceValue {
-    public static void main(String[] args) {
-        Map<String, String> nan = new TreeMap<>();
-        nan.put("val1", "mars");
-        nan.put("val2", "saturn");
-        System.out.println(replaceValue(nan));
-    }
+    public Map<String, String> replaceValue(Map<String, String> input) {
 
-    public static Map<String, String> replaceValue(Map<String, String> nan) {
-
-        Iterator<Map.Entry<String,String>> it =  nan.entrySet().iterator();
-        String value="" ;
-        String keyValue="";
-        int i=0;
-        while(  it.hasNext() )
-        {
-            Map.Entry<String,String> stl=it.next();
-            keyValue=stl.getKey();
-            if( keyValue != null && i ==0 )
-            {
-                value= stl.getValue();
-                nan.put(keyValue," ");
+        Iterator<Map.Entry<String, String>> it = input.entrySet().iterator();
+        String value = "";
+        String keyValue = "";
+        int i = 0;
+        while (it.hasNext()) {
+            Map.Entry<String, String> map = it.next();
+            keyValue = map.getKey();
+            if (keyValue != null && i == 0) {
+                value = map.getValue();
+                input.put(keyValue, " ");
                 i++;
+            } else if (keyValue != null) {
+                input.put(keyValue, value);
             }
-            else if( keyValue !=null )
-            {
-                nan.put(keyValue,value);
-            }
-
         }
-        return nan;
+        return input;
     }
 }

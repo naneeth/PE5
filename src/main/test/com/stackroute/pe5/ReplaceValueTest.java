@@ -13,58 +13,58 @@ import static org.junit.Assert.assertNotNull;
 public class ReplaceValueTest {
     @Before
     public  void setUp() throws Exception {
-          test = new ReplaceValue();
-        }
+        test = new ReplaceValue();
+    }
 
-        @After
-        public void tearDown() throws Exception {
-            test = null;
-        }
+    @After
+    public void tearDown() throws Exception {
+        test = null;
+    }
 
-        ReplaceValue test;
-
-
-        @Test
-        public void TestValueChange1() {
-            Map<String, String> list = new TreeMap<>();
-
-            list.put("val1","java");
-           list.put("val2","c++");
-
-            Map<String, String> res = new TreeMap<>();
-
-            res.put("val1"," ");
-            res.put("val2","java");
-
-            assertEquals(res, test.replaceValue(list)); }
-
-        @Test
-        public void TestValueChange2(){
+    ReplaceValue test;
 
 
+    @Test
+    public void TestValueChange1() {
+        Map<String, String> list = new TreeMap<>();
 
-            Map<String, String> hm = new TreeMap<>();
+        list.put("val1","java");
+        list.put("val2","c++");
 
-            hm.put("val1", "Shu");
-            hm.put("val2", "Ban");
+        Map<String, String> res = new TreeMap<>();
 
-            Map<String, String> res = new TreeMap<>();
+        res.put("val1"," ");
+        res.put("val2","java");
 
-            res.put("val1", " ");
-            res.put("val2", "Shu");
+        assertEquals(res, test.replaceValue(list)); }
 
-            assertEquals( res, test.replaceValue(hm));
-        }
+    @Test
+    public void TestValueChange2(){
 
-        @Test
-        public void modifyFailure() {
-            Map<String, String> hm = new TreeMap<>();
 
-            hm.put("val1", "Nan");
-            hm.put("val2", "nanee");
 
-            assertNotNull(test.replaceValue(hm));
+        Map<String, String> hm = new TreeMap<>();
 
-        }
+        hm.put("val1", "Shu");
+        hm.put("val2", "Ban");
+
+        Map<String, String> res = new TreeMap<>();
+
+        res.put("val1", " ");
+        res.put("val2", "Shu");
+
+        assertEquals( res, test.replaceValue(hm));
+    }
+
+    @Test
+    public void modifyFailure() {
+        Map<String, String> hm = new TreeMap<>();
+
+        hm.put("val1", "Nan");
+        hm.put("val2", "nanee");
+
+        assertNotNull(test.replaceValue(hm));
 
     }
+
+}

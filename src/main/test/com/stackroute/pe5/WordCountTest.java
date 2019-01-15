@@ -30,13 +30,10 @@ public class WordCountTest {
     public void CountTestSuccess() {
 
         String str = "one one -one___two,,three,one @three*one?two";
-
         Map<String, Integer> map = new HashMap<>();
-
         map.put("one", 5);
         map.put("two", 2);
         map.put("three", 2);
-
         assertEquals( map, test.counterList(str));
     }
 
@@ -62,14 +59,10 @@ public class WordCountTest {
     public void CountTestFailure() {
 
         String str="one two three one two three one two three";
-
         Map<String, Integer> map = new HashMap<>();
-
         map.put("one",3);
         map.put("two",3);
         map.put("three",3);
-
         assertNotNull("Error",test.counterList(str));
-
     }
 }
