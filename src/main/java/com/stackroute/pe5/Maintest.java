@@ -1,19 +1,36 @@
+
+/**
+ * Student class that represents the following information of a
+ * student: id, name, and age allthe member variables should be private
+ * .a. Implement `getter and setter`
+ * .b. Create a `StudentSorter` class that implements `Comparator interface`.
+ * c. Write a class `Maintest` create Student class object(minimum 5).
+ * d. Add these student object into a List of type Student.
+ * e. Sort the list based on their age in decreasing order,
+ * for student having sameage, sort based on their name.
+ */
+
 package com.stackroute.pe5;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class Maintest {
-
-
-    public static void main(String[] args) {
-        Student s1 = new Student(12, "naneeth", 22);
-        Student s2 = new Student(70, "gavrav", 26);
-        Student s3 = new Student(45, "nan", 20);
-        Student s4 = new Student(29, "sai", 87);
-        Student s5 = new Student(19, "ram", 27);
-        List<Student> list = new ArrayList<>();
-        list.add(s1);
+    /*
+    This method will get the list of student and then send the list to sort
+    and it converts the list in descending order
+    and then return student list.
+     */
+    public List<Student> sortStudentList(List<Student> studentList)
+    {
+        if(studentList == null )
+        {
+            return null;
+        }
+        Collections.sort(studentList,new StudentSorter().reversed()); // sending for sorting
+        return studentList;
     }
 
 }
